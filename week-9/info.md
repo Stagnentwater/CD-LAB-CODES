@@ -1,25 +1,28 @@
 # Week 9
 
 ## Aim
-Write a recursive descent parser for the grammar `E -> T E'`, `E' -> + T E' | e`, `T -> F T'`, `T' -> * F T' | e`, `F -> (E) | id`.
+Write a YACC program to validate an arithmetic expression for the grammar `E -> E + T | T`, `T -> T * F | F`, `F -> (E) | id`.
 
 ## Files
-- `program.c`
+- `program.l`
+- `program.y`
 
 ## Performing Steps
-1. Remove left recursion from the original grammar.
-2. Create one function for each non-terminal.
-3. Read the input string.
-4. Call the start symbol function and check whether the full string is consumed.
+1. Write the LEX rules to recognize identifiers, numbers, operators, and brackets.
+2. Write the YACC grammar for expression validation.
+3. Generate `lex.yy.c`, `y.tab.c`, and `y.tab.h`.
+4. Compile the generated files and run the parser.
 
 ## How To Run
 ```powershell
 cd week-9
-gcc program.c -o program
+bison -y -d -o y.tab.c program.y
+flex -o lex.yy.c program.l
+gcc lex.yy.c y.tab.c -o program
 .\program.exe
 ```
 
 ## Sample Input
 ```text
-a+b*c
+a+3*(b-2)
 ```

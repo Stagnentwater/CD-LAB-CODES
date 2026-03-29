@@ -39,7 +39,7 @@ This file matches the contents in the current `week-*` folders against the quest
 | [week-6](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-6) | 11 | Heap allocation strategy. |
 | [week-7](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-7) | 12 | Word and line counter using LEX. |
 | [week-8](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-8) | Alternate for 3 | Another lexical analyzer in C. |
-| [week-9](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-9) | 13 | Recursive descent parser for expression grammar. |
+| [week-9](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-9) | 13 | Filled using the Week 13 reference document's LEX/YACC expression validator because it corresponds to Internal Question 13 in this repo's numbering. |
 | [week-10](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-10) | Alternate for 6 | Older recursive descent parser version for `S` / `L` grammar. |
 | [week-11](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-11) | 6 | Recursive descent parser for `S -> (L) | a`. |
 | [week-12](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-12) | 4 | FIRST function program aligned to the newer Week 12 document. |
