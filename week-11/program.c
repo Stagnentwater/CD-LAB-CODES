@@ -1,43 +1,63 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-char s[100];
-int pos;
+const char *input;
+int pos = 0;
 
-char look(void) { return s[pos]; }
-void error(void) { printf("Error at position %d\n", pos); exit(1); }
+/* Function prototypes */
+int S();
+int L();
 
-int S(void);
+void error() {
+    printf(" Error at position %d\n", pos);
+    exit(1);
+}
 
-int L(void) {
+char lookahead() {
+    return input[pos];
+}
+
+/* S -> (L) | a */
+int S() {
+    if (lookahead() == 'a') {
+        pos++;
+        return 1;
+    } else if (lookahead() == '(') {
+        pos++;
+        if (!L()) error();
+        if (lookahead() == ')') {
+            pos++;
+            return 1;
+        } else {
+            error(); /* Missing ')' */
+        }
+    }
+    return 0;
+}
+
+/* L -> L, S | S */
+int L() {
     if (!S()) return 0;
-    while (look() == ',') {
+    while (lookahead() == ',') {
         pos++;
         if (!S()) error();
     }
     return 1;
 }
 
-int S(void) {
-    if (look() == 'a') {
-        pos++;
-        return 1;
-    }
-    if (look() == '(') {
-        pos++;
-        if (!L()) error();
-        if (look() == ')') {
-            pos++;
-            return 1;
-        }
+int main() {
+    char buffer[100];
+
+    printf("Enter the input string: ");
+    scanf("%s", buffer);
+    input = buffer;
+    pos = 0;
+
+    if (S() && input[pos] == '\0') {
+        printf(" String is successfully parsed.\n");
+    } else {
         error();
     }
     return 0;
-}
-
-int main(void) {
-    printf("Enter the input string: ");
-    scanf("%99s", s);
-    if (S() && s[pos] == '\0') puts("String is successfully parsed.");
-    else error();
 }
