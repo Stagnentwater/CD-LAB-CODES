@@ -1,63 +1,70 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
 
-const char *input;
-int pos = 0;
+void FIRST(char c);
+int count, n = 0;
+char prodn[10][10], first[10];
 
-/* Function prototypes */
-int S();
-int L();
-
-void error() {
-    printf(" Error at position %d\n", pos);
-    exit(1);
-}
-
-char lookahead() {
-    return input[pos];
-}
-
-/* S -> (L) | a */
-int S() {
-    if (lookahead() == 'a') {
-        pos++;
-        return 1;
-    } else if (lookahead() == '(') {
-        pos++;
-        if (!L()) error();
-        if (lookahead() == ')') {
-            pos++;
+int isPresent(char ch) {
+    for (int i = 0; i < n; i++) {
+        if (first[i] == ch)
             return 1;
-        } else {
-            error(); /* Missing ')' */
-        }
     }
     return 0;
-}
-
-/* L -> L, S | S */
-int L() {
-    if (!S()) return 0;
-    while (lookahead() == ',') {
-        pos++;
-        if (!S()) error();
-    }
-    return 1;
 }
 
 int main() {
-    char buffer[100];
+    int i, choice;
+    char c, ch;
 
-    printf("Enter the input string: ");
-    scanf("%s", buffer);
-    input = buffer;
-    pos = 0;
+    printf("How many productions? : ");
+    scanf("%d", &count);
+    getchar(); // Consume newline
 
-    if (S() && input[pos] == '\0') {
-        printf(" String is successfully parsed.\n");
-    } else {
-        error();
+    printf("Enter %d productions (epsilon = $):\n", count);
+    for (i = 0; i < count; i++) {
+        scanf("%s", prodn[i]);
     }
+
+    do {
+        n = 0;
+        printf("\nEnter non-terminal to find FIRST: ");
+        scanf(" %c", &c); // space before %c to skip any whitespace
+
+        FIRST(c);
+
+        printf("FIRST(%c) = { ", c);
+        for (i = 0; i < n; i++)
+            printf("%c ", first[i]);
+        printf("}\n");
+
+        printf("Press 1 to continue, any other key to exit: ");
+        scanf("%d", &choice);
+    } while (choice == 1);
+
     return 0;
+}
+
+void FIRST(char c) {
+    int j;
+    if (!isupper(c)) {
+        if (!isPresent(c))
+            first[n++] = c;
+        return;
+    }
+
+    for (j = 0; j < count; j++) {
+        if (prodn[j][0] == c) {
+            if (prodn[j][2] == '$') {
+                if (!isPresent('$'))
+                    first[n++] = '$';
+            } else if (islower(prodn[j][2])) {
+                if (!isPresent(prodn[j][2]))
+                    first[n++] = prodn[j][2];
+            } else {
+                FIRST(prodn[j][2]);
+            }
+        }
+    }
 }
