@@ -1,16 +1,16 @@
 # Week 11
 
 ## Aim
-Write a C program to calculate the FIRST function for the transformed grammar. The supplied manual repeats `Experiment 10`, so this second `Experiment 10` item is placed here as Week 11 for clean organization.
+Write a recursive descent parser for the grammar `S -> (L) | a` and `L -> L,S | S`.
 
 ## Files
 - `program.c`
 
 ## Performing Steps
-1. Use the grammar after removing left recursion.
-2. Build the FIRST sets in the correct order.
-3. Print each set clearly.
-4. In this code, `i` stands for `id` and `e` stands for epsilon.
+1. Read the input string.
+2. Parse it using functions for `S` and `L`.
+3. Accept the string only if the full input is consumed.
+4. Print the error position if parsing fails.
 
 ## How To Run
 ```powershell
@@ -19,11 +19,12 @@ gcc program.c -o program
 .\program.exe
 ```
 
+## Sample Input
+```text
+a
+```
+
 ## Sample Output
 ```text
-FIRST(F)  = { ( i }
-FIRST(T') = { * e }
-FIRST(T)  = { ( i }
-FIRST(E') = { + e }
-FIRST(E)  = { ( i }
+String is successfully parsed.
 ```

@@ -14,15 +14,15 @@ This file matches the contents in the current `week-*` folders against the quest
 | Internal Question No. | Important Question | Match Status | Matching Week Content |
 | --- | --- | --- | --- |
 | 1 | Implementation of symbol table | Exists | [week-5/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-5/info.md) now includes a separate standalone `symbol_table.c` program. |
-| 2 | Write a YACC program to implement a top-down parser for the given grammar | Exists | [week-12/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-12/info.md) |
+| 2 | Write a YACC program to implement a top-down parser for the given grammar | Exists | [week-13/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-13/info.md) now contains the YACC-based expression parser aligned to the newer reference document. |
 | 3 | Develop a lexical analyzer to recognize patterns in C such as identifiers, constants, comments, and operators | Exists | [week-2/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-2/info.md) |
-| 4 | Write a C program to calculate the FIRST function for the grammar `E->E+T`, `E->T`, `T->T*F`, `T->F`, `F->(E)/id` | Exists | [week-11/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-11/info.md) |
+| 4 | Write a C program to calculate the FIRST function for the grammar `E->E+T`, `E->T`, `T->T*F`, `T->F`, `F->(E)/id` | Exists | [week-12/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-12/info.md) |
 | 5 | Implementation of lexical analyzer using LEX tool | Exists | [week-3/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-3/info.md) |
-| 6 | Write recursive descent parser for the grammar `S->(L)`, `S->a`, `L->L,S`, `L->S` | Exists | [week-10/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-10/info.md) |
+| 6 | Write recursive descent parser for the grammar `S->(L)`, `S->a`, `L->L,S`, `L->S` | Exists | [week-11/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-11/info.md) |
 | 7 | Generate YACC specification for syntactic categories and recognize a valid arithmetic expression using `+`, `-`, `*`, `/` | Exists | [week-3/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-3/info.md) now includes `expr.l` and `expr.y` as a validator-only program. |
 | 8 | Implement type checking | Exists | [week-5/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-5/info.md) |
 | 9 | Program to recognize a valid variable starting with a letter followed by letters or digits | Exists | [week-3/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-3/info.md) now includes `var.l` and `var.y`. |
-| 10 | Implementation of calculator using LEX and YACC | Exists | [week-3/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-3/info.md) and [week-13/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-13/info.md) |
+| 10 | Implementation of calculator using LEX and YACC | Exists | [week-3/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-3/info.md) |
 | 11 | Implement any one storage allocation strategy: heap, stack, or static | Exists | [week-6/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-6/info.md) |
 | 12 | Write a LEX program to count the number of words and lines in a file or program | Exists | [week-7/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-7/info.md) |
 | 13 | Write recursive descent parser for the grammar `E->E+T`, `E->T`, `T->T*F`, `T->F`, `F->(E)/id` | Exists | [week-9/info.md](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-9/info.md) |
@@ -40,10 +40,10 @@ This file matches the contents in the current `week-*` folders against the quest
 | [week-7](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-7) | 12 | Word and line counter using LEX. |
 | [week-8](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-8) | Alternate for 3 | Another lexical analyzer in C. |
 | [week-9](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-9) | 13 | Recursive descent parser for expression grammar. |
-| [week-10](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-10) | 6 | Recursive descent parser for `S` / `L` grammar. |
-| [week-11](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-11) | 4 | FIRST function program. |
-| [week-12](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-12) | 2 | YACC top-down parser item. |
-| [week-13](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-13) | Alternate for 10 | Another calculator using LEX and YACC. |
+| [week-10](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-10) | Alternate for 6 | Older recursive descent parser version for `S` / `L` grammar. |
+| [week-11](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-11) | 6 | Recursive descent parser for `S -> (L) | a`. |
+| [week-12](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-12) | 4 | FIRST function program aligned to the newer Week 12 document. |
+| [week-13](/c:/Users/ayn25/OneDrive/Desktop/cd%20lab/week-13) | 2, 7 | YACC-based arithmetic-expression validity checker aligned to the newer Week 13 document. |
 
 ## Missing Or Partial Items
 

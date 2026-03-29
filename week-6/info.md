@@ -7,10 +7,10 @@ Implement one storage allocation strategy. This folder uses heap allocation beca
 - `program.c`
 
 ## Performing Steps
-1. Allocate memory at runtime using `malloc`.
-2. Store values in the allocated block.
-3. Print the values.
-4. Release the memory using `free`.
+1. Enter how many elements to store.
+2. Allocate memory at runtime using `malloc`.
+3. Enter the values and store them in heap memory.
+4. Print the values and release the memory using `free`.
 
 ## How To Run
 ```powershell
@@ -21,6 +21,11 @@ gcc program.c -o program
 
 ## Sample Output
 ```text
+Input:
+5
+10 20 30 40 50
+
+Output:
 Heap values: 10 20 30 40 50
 Memory freed
 ```

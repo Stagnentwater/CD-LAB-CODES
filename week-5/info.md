@@ -8,14 +8,15 @@ Implement simple type checking using a small symbol table, and also include a se
 - `symbol_table.c`
 
 ## Performing Steps
-1. Declare variables and store their types in the symbol table.
-2. Check assignment types using the stored information.
-3. Print whether the assignment is valid, mismatched, or undeclared.
+1. Enter variable declarations and their types.
+2. Store the declarations in the symbol table.
+3. Enter assignment checks one by one.
+4. Print whether each assignment is valid, mismatched, or undeclared.
 
 ## Separate Symbol Table Program
-1. Insert a few identifiers into the symbol table.
+1. Insert identifiers into the symbol table from user input.
 2. Display the table.
-3. Search for a present symbol and a missing symbol.
+3. Search for a symbol entered at runtime.
 
 ## How To Run
 ### Type checking
@@ -34,6 +35,17 @@ gcc symbol_table.c -o symbol_table
 
 ## Sample Output
 ```text
+Input:
+2
+a int
+b float
+4
+a int
+b float
+a float
+c int
+
+Output:
 a : type ok
 b : type ok
 a : type mismatch
@@ -42,10 +54,17 @@ c : not declared
 
 ## Symbol Table Output
 ```text
+Input:
+3
+a
+sum
+temp
+sum
+
+Output:
 Symbol table:
 1 a
 2 sum
 3 temp
-sum found
-x not found
+Symbol found
 ```

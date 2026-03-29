@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char sym[5][10];
+char sym[20][20];
 int n;
 
 void add(char s[]) { strcpy(sym[n++], s); }
@@ -12,14 +12,21 @@ int find(char s[]) {
 }
 
 int main(void) {
-    int i;
-    add("a");
-    add("sum");
-    add("temp");
+    int i, m;
+    char s[20];
+
+    printf("Enter number of symbols: ");
+    scanf("%d", &m);
+    printf("Enter symbols\n");
+    for (i = 0; i < m; i++) {
+        scanf("%s", s);
+        add(s);
+    }
 
     puts("Symbol table:");
     for (i = 0; i < n; i++) printf("%d %s\n", i + 1, sym[i]);
 
-    printf(find("sum") >= 0 ? "sum found\n" : "sum not found\n");
-    printf(find("x") >= 0 ? "x found\n" : "x not found\n");
+    printf("Enter symbol to search: ");
+    scanf("%s", s);
+    printf(find(s) >= 0 ? "Symbol found\n" : "Symbol not found\n");
 }
